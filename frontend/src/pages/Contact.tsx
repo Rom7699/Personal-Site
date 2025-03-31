@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import '../styles/Contact.css';
+import React, { useState } from "react";
+import "../styles/Contact.css";
 
 interface FormData {
   name: string;
@@ -10,10 +10,10 @@ interface FormData {
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const [formStatus, setFormStatus] = useState<{
@@ -32,23 +32,82 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+
+    // Set loading state
     setFormStatus({
       submitted: true,
-      success: true,
-      message: 'Thank you for your message! I will get back to you soon.',
+      success: undefined,
+      message: "Sending your message...",
     });
 
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    try {
+      console.log("About to send fetch request", formData);
+      // Make API call to your backend
+      const response = await fetch("http://localhost:3000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log("Response received:", response);
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        // Handle successful submission
+        setFormStatus({
+          submitted: true,
+          success: true,
+          message: "Thank you for your message! I will get back to you soon.",
+        });
+
+        // Reset form after submission
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        // Handle error from server
+        setFormStatus({
+          submitted: true,
+          success: false,
+          message:
+            result.message || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: "Network error. Please check your connection and try again.",
+      });
+    }
   };
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Simulate form submission
+  //   setFormStatus({
+  //     submitted: true,
+  //     success: true,
+  //     message: 'Thank you for your message! I will get back to you soon.',
+  //   });
+
+  //   // Reset form after submission
+  //   setFormData({
+  //     name: '',
+  //     email: '',
+  //     subject: '',
+  //     message: '',
+  //   });
+  // };
 
   return (
     <div className="contact-page">
@@ -84,14 +143,14 @@ const Contact: React.FC = () => {
           </div>
           <div className="social-links">
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/rom-eisenberg-a80a14212/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-linkedin"></i>
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Rom7699"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -101,10 +160,26 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="contact-form-container">
-          {formStatus.submitted && formStatus.success ? (
+          {formStatus.submitted && formStatus.success === undefined ? (
+            <div className="form-loading">
+              <div className="spinner"></div>
+              <p>{formStatus.message}</p>
+            </div>
+          ) : formStatus.submitted && formStatus.success ? (
             <div className="form-success">
               <i className="fas fa-check-circle"></i>
               <p>{formStatus.message}</p>
+            </div>
+          ) : formStatus.submitted && !formStatus.success ? (
+            <div className="form-error">
+              <i className="fas fa-times-circle"></i>
+              <p>{formStatus.message}</p>
+              <button
+                className="try-again-btn"
+                onClick={() => setFormStatus({ submitted: false })}
+              >
+                Try Again
+              </button>
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
