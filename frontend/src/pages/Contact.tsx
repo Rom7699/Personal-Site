@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
     try {
       console.log("About to send fetch request", formData);
       // Make API call to your backend
-      const response = await fetch("http://localhost:3000/api/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
