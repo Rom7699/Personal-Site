@@ -91,24 +91,6 @@ const Contact: React.FC = () => {
     }
   };
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Simulate form submission
-  //   setFormStatus({
-  //     submitted: true,
-  //     success: true,
-  //     message: 'Thank you for your message! I will get back to you soon.',
-  //   });
-
-  //   // Reset form after submission
-  //   setFormData({
-  //     name: '',
-  //     email: '',
-  //     subject: '',
-  //     message: '',
-  //   });
-  // };
-
   return (
     <div className="contact-page">
       <section className="contact-header">

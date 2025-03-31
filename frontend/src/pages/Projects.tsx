@@ -5,9 +5,9 @@ import blockChainImage from '/public/assets/blockChain_image.jpeg';
 import bookStoreImage from '/public/assets/bookStore_image.jpeg';
 import tetrisImage from '/public/assets/tetris.jpg';
 import nlpImage from '/public/assets/NLP_project_image.jpeg';
+import portfolioImage from '/public/assets/portfolioSite_image.jpeg';
 
 const Projects: React.FC = () => {
-  // Sample projects (you should replace these with your actual projects)
   const projects = [
     {
       id: 1,
@@ -41,6 +41,14 @@ const Projects: React.FC = () => {
       technologies: ['Python', 'NLTK', 'sklearn', 'numpy'],
       imageUrl: nlpImage,
       githubUrl: 'https://github.com/Rom7699/NLP_Final_Project',
+    },
+    {
+      id: 5,
+      title: 'Portfolio Website',
+      description: 'My personal portfolio website built with React and Express with Nodemailer for email sending. Features a responsive design, project showcase, and contact form with email integration. Developed to highlight my skills and projects while providing an intuitive user experience.',
+      technologies: ['React', 'CSS', 'TypeScript', 'Express', 'Nodemailer'],
+      imageUrl: portfolioImage,
+      githubUrl: 'https://github.com/Rom7699/Personal-Site',
     },
   ];
 

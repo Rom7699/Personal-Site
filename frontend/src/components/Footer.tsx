@@ -6,10 +6,10 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="social-links">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Rom7699" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/rom-eisenberg-a80a14212/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin"></i>
           </a>
           <a href="mailto:rom7699@gmail.com">

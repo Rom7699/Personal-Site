@@ -1,24 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import SkillCard from '../components/SkillCard';
-import '../styles/Home.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import SkillCard from "../components/SkillCard";
+import "../styles/Home.css";
 
 const Home: React.FC = () => {
-  const programmingSkills = ['Python', 'C/C++', 'C#', 'JavaScript', 'TypeScript'];
-  const frameworkSkills = ['React', '.NET', 'Git', 'Docker', 'AWS'];
-  const otherSkills = ['Linux Command Line', 'Shell Scripting', 'Problem Solving', 'Team Leadership'];
+  const programmingSkills = [
+    "Python",
+    "C/C++",
+    "C#",
+    "JavaScript",
+    "TypeScript",
+  ];
+  const frameworkSkills = ["React", ".NET", "Git", "Docker", "AWS"];
+  const otherSkills = [
+    "Linux Command Line",
+    "Shell Scripting",
+    "Problem Solving",
+    "Team Leadership",
+  ];
 
   return (
     <div className="home">
       <section className="hero">
         <div className="hero-content">
           <h1>Rom Eisenberg</h1>
-          <h2>Computer Science Student & NOC Engineer</h2>
+          <h2>Computer Science Student</h2>
           <p>
-            I'm a passionate developer and a third-year Computer Science student, currently working as a NOC Engineer at Radware.
+            I'm a passionate developer and third-year Computer Science student
+            seeking a software engineering role where I can apply my skills,
+            contribute, and grow.
           </p>
           <div className="hero-buttons">
-            <Link to="/projects" className="btn btn-primary">
+            <a
+              href="/public/assets/Rom_Eisenberg_Resume.pdf"
+              download="Rom_Eisenberg_Resume.pdf"
+              className="btn btn-primary"
+            >
+              Resume
+            </a>
+            <Link to="/projects" className="btn btn-secondary">
               View Projects
             </Link>
             <Link to="/contact" className="btn btn-secondary">
@@ -36,15 +56,28 @@ const Home: React.FC = () => {
         <div className="about-content">
           <div className="about-text">
             <p>
-              I am a dedicated third-year Computer Science student at the Academic College of Tel Aviv-Yaffo with a passion for technology and problem-solving. 
-              Currently working as a NOC Engineer at Radware, I monitor global cloud infrastructure and ensure service availability for top-tier companies.
+              I am a dedicated third-year Computer Science student at the
+              Academic College of Tel Aviv-Yaffo with a passion for technology
+              and problem-solving. My journey in tech began as a NOC Engineer at
+              Radware, where I monitor global cloud infrastructure and ensure
+              service availability for top-tier companies. Through this
+              experience, I have developed strong technical and interpersonal
+              skills, handling network incidents under pressure while
+              maintaining operational stability.
             </p>
             <p>
-              With experience in resolving network incidents under pressure and maintaining operational stability, I have developed strong technical and interpersonal skills.
-              I excel at communicating technical solutions effectively and have served as a tech lead, providing escalation support and training new team members.
+              I am driven by a deep motivation to learn and explore new
+              technologies. I thrive in dynamic environments that challenge me
+              to expand my knowledge and adapt to emerging fields. Whether it's
+              diving into new programming languages, understanding complex
+              systems, or experimenting with innovative solutions, I am always
+              eager to grow.
             </p>
             <p>
-              I am eager to apply my knowledge in a challenging environment where I can contribute, learn, and grow. Expected to graduate in July 2025, I am looking for opportunities to expand my skills and make meaningful contributions in the tech industry.
+              Expected to graduate in July 2026, I am actively seeking a
+              software engineering role where I can apply my skills, contribute
+              meaningfully, and continue my journey of learning and professional
+              development.
             </p>
           </div>
           <div className="about-details">
@@ -54,7 +87,7 @@ const Home: React.FC = () => {
                 <h3>Education</h3>
                 <p>B.Sc. Computer Science</p>
                 <p>The Academic College of Tel Aviv-Yaffo</p>
-                <p>2022 - 2025 (Expected)</p>
+                <p>2022 - 2026 (Expected)</p>
               </div>
             </div>
             <div className="detail-item">
@@ -85,20 +118,20 @@ const Home: React.FC = () => {
           <div className="underline"></div>
         </div>
         <div className="skills-container">
-          <SkillCard 
-            title="Programming Languages" 
-            skills={programmingSkills} 
-            icon="fas fa-code" 
+          <SkillCard
+            title="Programming Languages"
+            skills={programmingSkills}
+            icon="fas fa-code"
           />
-          <SkillCard 
-            title="Frameworks & Tools" 
-            skills={frameworkSkills} 
-            icon="fas fa-tools" 
+          <SkillCard
+            title="Frameworks & Tools"
+            skills={frameworkSkills}
+            icon="fas fa-tools"
           />
-          <SkillCard 
-            title="Other Skills" 
-            skills={otherSkills} 
-            icon="fas fa-laptop-code" 
+          <SkillCard
+            title="Other Skills"
+            skills={otherSkills}
+            icon="fas fa-laptop-code"
           />
         </div>
       </section>
