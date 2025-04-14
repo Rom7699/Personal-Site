@@ -2,11 +2,11 @@
   "name": "personal-site",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "NODE_DEV=development nodemon backend/server.js",
-    "build": "npm install && cd frontend && npm install && npm run build",
-    "start": "NODE_ENV=production ts-node server/src/index.ts"
-  },
+"scripts": {
+  "dev": "NODE_DEV=development nodemon backend/server.js",
+  "build": "npm install && cd frontend && npm install && npm run build",
+  "start": "NODE_ENV=production node backend/server.js"
+},
   "type": "module",
   "keywords": [],
   "author": "",
