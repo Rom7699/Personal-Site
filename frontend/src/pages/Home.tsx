@@ -32,7 +32,7 @@ const Home: React.FC = () => {
           </p>
           <div className="hero-buttons">
             <a
-              href="http://localhost:3000/assets/Rom_Eisenberg_Resume.pdf"
+              href="/assets/Rom_Eisenberg_Resume.pdf"
               download="Rom_Eisenberg_Resume.pdf"
               className="btn btn-primary"
             >
