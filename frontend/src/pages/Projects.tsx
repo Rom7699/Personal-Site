@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
       description: 'Book Store is a beginner-friendly project that demonstrates the fundamentals of the MERN (MongoDB, Express, React, Node.js) stack.',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
       imageUrl: bookStoreImage,
-      githubUrl: 'https://github.com/yourusername/project2',
+      githubUrl: 'https://github.com/Rom7699/Book-Store',
     },
     {
       id: 3,

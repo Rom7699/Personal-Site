@@ -35,7 +35,6 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Set loading state
     setFormStatus({
       submitted: true,
       success: undefined,
@@ -58,14 +57,12 @@ const Contact: React.FC = () => {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        // Handle successful submission
         setFormStatus({
           submitted: true,
           success: true,
           message: "Thank you for your message! I will get back to you soon.",
         });
 
-        // Reset form after submission
         setFormData({
           name: "",
           email: "",
