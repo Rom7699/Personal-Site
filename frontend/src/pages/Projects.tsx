@@ -6,7 +6,7 @@ import bookStoreImage from "/public/assets/bookStore_image.jpeg";
 import tetrisImage from "/public/assets/tetris.jpg";
 import nlpImage from "/public/assets/NLP_project_image.jpeg";
 import portfolioImage from "/public/assets/portfolioSite_image.jpeg";
-import mcp from "frontend/public/assets/MCP_image.jpeg";
+import mcp from "/public/assets/MCP_image.jpeg";
 
 const Projects: React.FC = () => {
   const projects = [
